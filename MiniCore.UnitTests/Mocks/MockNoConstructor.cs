@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniCore
+namespace MiniCore.UnitTests.Mocks
 {
-    public class Class1
+    public class MockNoConstructor
     {
     }
 }
