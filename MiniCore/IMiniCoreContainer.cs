@@ -8,9 +8,8 @@ namespace MiniCore
 {
     public interface IMiniCoreContainer
     {
-        void Register<T, V>();
         void Register(Type from, Type to);
-        T Resolve<T>();
         object Resolve(Type type);
+        IEnumerable<RegisteredPair> Registry { get; }
     }
 }

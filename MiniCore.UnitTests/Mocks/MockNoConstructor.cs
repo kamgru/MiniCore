@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniCore.UnitTests.Mocks
 {
-    public class MockNoConstructor
+    public class MockNoConstructor : IMock
     {
     }
 }

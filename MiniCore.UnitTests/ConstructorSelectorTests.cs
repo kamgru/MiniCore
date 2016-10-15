@@ -47,7 +47,7 @@ namespace MiniCore.UnitTests
         [TestInitialize]
         public void TestInitialize()
         {
-            selector = new MiniConstructorSelector();
+            selector = new ConstructorSelector();
         }
 
         private IConstructorSelector selector;

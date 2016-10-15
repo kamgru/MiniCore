@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MiniCore
 {
-    public class MiniConstructorSelector : IConstructorSelector
+    public class ConstructorSelector : IConstructorSelector
     {
         public ConstructorInfo Select(Type type)
         {

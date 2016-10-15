@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniCore.UnitTests.Mocks
 {
-    public class MockPrivateConstructor : IMock
+    public interface IMock
     {
-        private MockPrivateConstructor() { }
     }
 }

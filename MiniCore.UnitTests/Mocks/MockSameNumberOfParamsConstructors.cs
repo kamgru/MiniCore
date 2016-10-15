@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniCore.UnitTests.Mocks
 {
-    public class MockSameNumberOfParamsConstructors
+    public class MockSameNumberOfParamsConstructors : IMock
     {
         public MockSameNumberOfParamsConstructors(string s, int t) { }
         public MockSameNumberOfParamsConstructors(int i, string s) { }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniCore.UnitTests.Mocks
 {
-    public class MockMultipleConstructors
+    public class MockMultipleConstructors : IMock
     {
         public MockMultipleConstructors() { }
 
