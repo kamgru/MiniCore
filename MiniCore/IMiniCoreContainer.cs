@@ -11,5 +11,7 @@ namespace MiniCore.Container
         void Register(Type from, Type to);
         object Resolve(Type type);
         IEnumerable<RegisteredPair> Registry { get; }
+
+        void RegisterInstance(Type type, object instance);
     }
 }

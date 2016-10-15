@@ -70,5 +70,15 @@ namespace MiniCore.Container
                 throw new ArgumentException($"Multiple registrations of type {from.ToString()}");
             }
         }
+
+        public void RegisterInstance(Type type, object instance)
+        {
+            RegisterCheck(type);
+
+            var register = new RegisteredPair();
+            register.From = type;
+            register.Instance = instance;
+            _registry.Add(register);
+        }
     }
 }

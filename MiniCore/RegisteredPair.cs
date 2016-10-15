@@ -8,8 +8,9 @@ namespace MiniCore.Container
 {
     public class RegisteredPair
     {
-        public Type From { get; private set; }
+        public Type From { get; internal set; }
         public Type To { get; private set; }
+        public object Instance { get; internal set; }
 
         public RegisteredPair(Type from, Type to)
         {
@@ -20,5 +21,7 @@ namespace MiniCore.Container
             From = from;
             To = to == null ? from : to;
         }
+
+        public RegisteredPair() { }
     }
 }

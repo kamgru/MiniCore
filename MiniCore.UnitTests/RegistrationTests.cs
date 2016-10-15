@@ -18,6 +18,15 @@ namespace MiniCore.UnitTests
         }
 
         [TestMethod]
+        public void ShouldRegisterInstance()
+        {
+            var instance = new MockNoConstructor();
+            container.RegisterInstance(typeof(IMock), instance);
+            var registered = container.Registry.First(f => f.From == typeof(IMock));
+            Assert.AreSame(instance, registered.Instance);
+        }
+
+        [TestMethod]
         public void ShouldMapFromTypeWhenToIsNull()
         {
             container.Register(typeof(MockNoConstructor), null);
