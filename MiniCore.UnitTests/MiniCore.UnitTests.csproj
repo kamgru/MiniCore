@@ -47,7 +47,10 @@
   <ItemGroup>
     <Compile Include="ConstructorSelectorTests.cs" />
     <Compile Include="Helpers\ObjectExtensions.cs" />
+    <Compile Include="Mocks\IDependency.cs" />
     <Compile Include="Mocks\IMock.cs" />
+    <Compile Include="Mocks\MockConstructorDependency.cs" />
+    <Compile Include="Mocks\MockDependency.cs" />
     <Compile Include="Mocks\MockMultipleConstructors.cs" />
     <Compile Include="Mocks\MockNoConstructor.cs" />
     <Compile Include="Mocks\MockPrivateConstructor.cs" />
@@ -60,9 +63,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MiniCore\MiniCore.csproj">
+    <ProjectReference Include="..\MiniCore\MiniCore.Container.csproj">
       <Project>{309599D8-4E10-4A6D-855D-A7FD842FCE39}</Project>
-      <Name>MiniCore</Name>
+      <Name>MiniCore.Container</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

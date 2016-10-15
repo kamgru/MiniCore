@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MiniCore.Container;
 using MiniCore.UnitTests.Mocks;
 
 namespace MiniCore.UnitTests
@@ -41,6 +42,13 @@ namespace MiniCore.UnitTests
         {
             container.Register(typeof(IMock), typeof(MockNoConstructor));
             container.Register(typeof(IMock), typeof(MockPrivateConstructor));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ShouldThrowIfRegisteringPrimitiveType()
+        {
+            container.Register(typeof(int), null);
         }
 
         [TestInitialize]

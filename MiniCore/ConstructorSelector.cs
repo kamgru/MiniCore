@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniCore
+namespace MiniCore.Container
 {
     public class ConstructorSelector : IConstructorSelector
     {

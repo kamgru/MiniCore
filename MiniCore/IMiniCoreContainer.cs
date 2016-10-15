@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniCore
+namespace MiniCore.Container
 {
     public interface IContainer
     {
