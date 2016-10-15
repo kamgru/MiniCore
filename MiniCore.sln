@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCore.Container", "MiniC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCore.Container.UnitTests", "MiniCore.UnitTests\MiniCore.Container.UnitTests.csproj", "{E33C7C27-E3A1-4DE1-B953-1B65BF65DE79}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Container", "Container", "{58A94DD5-EAC7-4791-BACA-35CC79D1CEF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniCore.Container.Wcf", "MiniCore.Container.Wcf\MiniCore.Container.Wcf.csproj", "{626F0EBF-793B-45F1-9368-71CECBF70450}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,8 +25,17 @@ Global
 		{E33C7C27-E3A1-4DE1-B953-1B65BF65DE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E33C7C27-E3A1-4DE1-B953-1B65BF65DE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E33C7C27-E3A1-4DE1-B953-1B65BF65DE79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626F0EBF-793B-45F1-9368-71CECBF70450}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626F0EBF-793B-45F1-9368-71CECBF70450}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626F0EBF-793B-45F1-9368-71CECBF70450}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626F0EBF-793B-45F1-9368-71CECBF70450}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{309599D8-4E10-4A6D-855D-A7FD842FCE39} = {58A94DD5-EAC7-4791-BACA-35CC79D1CEF6}
+		{E33C7C27-E3A1-4DE1-B953-1B65BF65DE79} = {58A94DD5-EAC7-4791-BACA-35CC79D1CEF6}
+		{626F0EBF-793B-45F1-9368-71CECBF70450} = {58A94DD5-EAC7-4791-BACA-35CC79D1CEF6}
 	EndGlobalSection
 EndGlobal
