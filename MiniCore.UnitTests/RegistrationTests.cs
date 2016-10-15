@@ -35,12 +35,20 @@ namespace MiniCore.UnitTests
             Assert.Fail();
         }
 
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ShouldThrowIfMultipleRegistrationsOfSameType()
+        {
+            container.Register(typeof(IMock), typeof(MockNoConstructor));
+            container.Register(typeof(IMock), typeof(MockPrivateConstructor));
+        }
+
         [TestInitialize]
         public void TestInitialize()
         {
             container = new MiniCoreContainer();
         }
 
-        private IMiniCoreContainer container;
+        private IContainer container;
     }
 }

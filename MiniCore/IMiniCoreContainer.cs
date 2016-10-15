@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MiniCore
 {
-    public interface IMiniCoreContainer
+    public interface IContainer
     {
         void Register(Type from, Type to);
         object Resolve(Type type);
