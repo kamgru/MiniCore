@@ -31,6 +31,14 @@ namespace MiniCore.UnitTests
             Assert.IsNotNull(container.Resolve(typeof(IMock)));
         }
 
+        [TestMethod]
+        public void ShouldResolveObjectInstance()
+        {
+            var instance = new MockNoConstructor();
+            container.RegisterInstance(typeof(IMock), instance);
+            Assert.IsNotNull(container.Resolve(typeof(IMock)));
+        }
+
         [TestInitialize]
         public void TestInitialize()
         {

@@ -38,15 +38,23 @@ namespace MiniCore.Container
         {
             ResolveCheck(type);
 
-            var to = Registry.First(f => f.From == type).To;
-            var ctor = _constructorSelector.Select(to);
-            var parameters = new List<object>();
-            foreach (var p in ctor.GetParameters())
+            var register = Registry.First(f => f.From == type);
+
+            if (register.Instance != null)
             {
-                parameters.Add(Resolve(p.ParameterType));
+                return register.Instance;
             }
-            return ctor.Invoke(parameters.ToArray());
-            
+            else
+            {
+                var to = register.To;
+                var ctor = _constructorSelector.Select(to);
+                var parameters = new List<object>();
+                foreach (var p in ctor.GetParameters())
+                {
+                    parameters.Add(Resolve(p.ParameterType));
+                }
+                return ctor.Invoke(parameters.ToArray());
+            }            
         }
 
         private void ResolveCheck(Type type)
