@@ -2,15 +2,10 @@
 using MiniCore;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using MiniCore.UnitTests.Helpers;
-using MiniCore.Container;
+using MiniCore.Container.UnitTests.Helpers;
 
-namespace MiniCore.UnitTests
+namespace MiniCore.Container.UnitTests
 {
     [TestClass]
     public class ConstructorSelectorTests

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniCore.UnitTests.Mocks
+namespace MiniCore.Container.UnitTests.Mocks
 {
     public interface IMock
     {

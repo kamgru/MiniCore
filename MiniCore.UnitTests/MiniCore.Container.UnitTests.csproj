@@ -7,8 +7,8 @@
     <ProjectGuid>{E33C7C27-E3A1-4DE1-B953-1B65BF65DE79}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MiniCore.UnitTests</RootNamespace>
-    <AssemblyName>MiniCore.UnitTests</AssemblyName>
+    <RootNamespace>MiniCore.Container.UnitTests</RootNamespace>
+    <AssemblyName>MiniCore.Container.UnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
