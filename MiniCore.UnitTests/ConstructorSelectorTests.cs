@@ -11,7 +11,7 @@ namespace MiniCore.Container.UnitTests
     public class ConstructorSelectorTests
     {
         [TestMethod]
-        public void PicksDefaultConstructorIfNoneDeclared()
+        public void ShouldPickDefaultConstructorWhenNoneDeclared()
         {
             var expected = typeof(Mocks.MockNoConstructor).GetConstructors().First().ToJSON();
             var actual = selector.Select(typeof(Mocks.MockNoConstructor)).ToJSON();
@@ -19,7 +19,7 @@ namespace MiniCore.Container.UnitTests
         }
 
         [TestMethod]
-        public void PicksConstructorWithMostArguments()
+        public void ShouldPickConstructorWithMostArguments()
         {
             var expected = typeof(Mocks.MockMultipleConstructors).GetConstructors().First(f => f.GetParameters().Count() == 2).ToJSON();
             var actual = selector.Select(typeof(Mocks.MockMultipleConstructors)).ToJSON();
@@ -28,16 +28,23 @@ namespace MiniCore.Container.UnitTests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void ThrowsIfMultipleConstructorsWithSameNumberOfArguments()
+        public void ShouldThrowIfMultipleConstructorsWithSameNumberOfArguments()
         {
             selector.Select(typeof(Mocks.MockSameNumberOfParamsConstructors));            
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void ThrowsIfDefaultCtorPrivateAndNoneDeclared()
+        public void ShouldThrowIfDefaultCtorPrivateAndNoneDeclared()
         {            
             selector.Select(typeof(Mocks.MockPrivateConstructor));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void ShouldThrowWhenTypeNull()
+        {
+            selector.Select(null);
         }
 
         [TestInitialize]

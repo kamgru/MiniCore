@@ -11,6 +11,11 @@ namespace MiniCore.Container
     {
         public ConstructorInfo Select(Type type)
         {
+            if (type == null)
+            {
+                throw new ArgumentNullException(nameof(type));
+            }
+
             var ctors = type.GetConstructors().OrderByDescending(order => order.GetParameters().Length);
 
             if (ctors.Count() > 1)
