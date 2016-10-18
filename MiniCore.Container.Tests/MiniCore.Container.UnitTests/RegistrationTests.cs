@@ -2,7 +2,7 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MiniCore.Container;
-using MiniCore.Container.UnitTests.Mocks;
+using MiniCore.Container.Tests.Common.Mocks;
 
 namespace MiniCore.Container.UnitTests
 {

@@ -3,7 +3,9 @@ using MiniCore;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
-using MiniCore.Container.UnitTests.Helpers;
+using MiniCore.Container.Tests.Common;
+using MiniCore.Container.Tests.Common.Mocks;
+using MiniCore.Container.Tests.Common.Helpers;
 
 namespace MiniCore.Container.UnitTests
 {
@@ -13,16 +15,16 @@ namespace MiniCore.Container.UnitTests
         [TestMethod]
         public void ShouldPickDefaultConstructorWhenNoneDeclared()
         {
-            var expected = typeof(Mocks.MockNoConstructor).GetConstructors().First().ToJSON();
-            var actual = selector.Select(typeof(Mocks.MockNoConstructor)).ToJSON();
+            var expected = typeof(MockNoConstructor).GetConstructors().First().ToJSON();
+            var actual = selector.Select(typeof(MockNoConstructor)).ToJSON();
             Assert.AreEqual(expected, actual);
         }
 
         [TestMethod]
         public void ShouldPickConstructorWithMostArguments()
         {
-            var expected = typeof(Mocks.MockMultipleConstructors).GetConstructors().First(f => f.GetParameters().Count() == 2).ToJSON();
-            var actual = selector.Select(typeof(Mocks.MockMultipleConstructors)).ToJSON();
+            var expected = typeof(MockMultipleConstructors).GetConstructors().First(f => f.GetParameters().Count() == 2).ToJSON();
+            var actual = selector.Select(typeof(MockMultipleConstructors)).ToJSON();
             Assert.AreEqual(expected, actual);
         }
 
@@ -30,14 +32,14 @@ namespace MiniCore.Container.UnitTests
         [ExpectedException(typeof(ArgumentException))]
         public void ShouldThrowIfMultipleConstructorsWithSameNumberOfArguments()
         {
-            selector.Select(typeof(Mocks.MockSameNumberOfParamsConstructors));            
+            selector.Select(typeof(MockSameNumberOfParamsConstructors));            
         }
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
         public void ShouldThrowIfDefaultCtorPrivateAndNoneDeclared()
         {            
-            selector.Select(typeof(Mocks.MockPrivateConstructor));
+            selector.Select(typeof(MockPrivateConstructor));
         }
 
         [TestMethod]

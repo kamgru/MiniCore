@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
-namespace MiniCore.Container.UnitTests.Helpers
+namespace MiniCore.Container.Tests.Common.Helpers
 {
     public static class ObjectExtensions
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using MiniCore.Container.UnitTests.Mocks;
+using MiniCore.Container.Tests.Common.Mocks;
 
 namespace MiniCore.Container.UnitTests
 {

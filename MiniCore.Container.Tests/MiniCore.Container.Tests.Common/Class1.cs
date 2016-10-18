@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MiniCore.Container.UnitTests.Mocks
+namespace MiniCore.Container.Tests.Common
 {
-    public class MockDependency : IDependency
+    public class Class1
     {
     }
 }
