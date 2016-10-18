@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E33C7C27-E3A1-4DE1-B953-1B65BF65DE79}</ProjectGuid>
+    <ProjectGuid>{626F0EBF-793B-45F1-9368-71CECBF70450}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MiniCore.Container.UnitTests</RootNamespace>
-    <AssemblyName>MiniCore.Container.UnitTests</AssemblyName>
+    <RootNamespace>MiniCore.Container.Wcf</RootNamespace>
+    <AssemblyName>MiniCore.Container.Wcf</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,13 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,33 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConstructorSelectorTests.cs" />
-    <Compile Include="ContainerTestsBase.cs" />
-    <Compile Include="ExtensionsTests.cs" />
-    <Compile Include="Helpers\ObjectExtensions.cs" />
-    <Compile Include="Mocks\IDependency.cs" />
-    <Compile Include="Mocks\IMock.cs" />
-    <Compile Include="Mocks\MockConstructorDependency.cs" />
-    <Compile Include="Mocks\MockDependency.cs" />
-    <Compile Include="Mocks\MockMultipleConstructors.cs" />
-    <Compile Include="Mocks\MockNoConstructor.cs" />
-    <Compile Include="Mocks\MockPrivateConstructor.cs" />
-    <Compile Include="Mocks\MockSameNumberOfParamsConstructors.cs" />
+    <Compile Include="MiniCoreInstanceProvider.cs" />
+    <Compile Include="MiniCoreInstanceProviderBehaviour.cs" />
+    <Compile Include="MiniCoreServiceHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegistrationTests.cs" />
-    <Compile Include="ResolvingTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MiniCore\MiniCore.Container.csproj">
-      <Project>{309599D8-4E10-4A6D-855D-A7FD842FCE39}</Project>
+    <ProjectReference Include="..\MiniCore.Container\MiniCore.Container.csproj">
+      <Project>{309599d8-4e10-4a6d-855d-a7fd842fce39}</Project>
       <Name>MiniCore.Container</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

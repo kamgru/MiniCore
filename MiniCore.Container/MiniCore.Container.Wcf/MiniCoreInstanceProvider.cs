@@ -36,8 +36,7 @@ namespace MiniCore.Container.Wcf
         }
 
         public void ReleaseInstance(InstanceContext instanceContext, object instance)
-        {
-            //throw new NotImplementedException();
+        {            
         }
     }
 }
