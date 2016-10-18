@@ -15,8 +15,8 @@ namespace MiniCore.Container.UnitTests
         [TestMethod]
         public void ShouldPickDefaultConstructorWhenNoneDeclared()
         {
-            var expected = typeof(MockNoConstructor).GetConstructors().First().ToJSON();
-            var actual = selector.Select(typeof(MockNoConstructor)).ToJSON();
+            var expected = typeof(MockPoco).GetConstructors().First().ToJSON();
+            var actual = selector.Select(typeof(MockPoco)).ToJSON();
             Assert.AreEqual(expected, actual);
         }
 

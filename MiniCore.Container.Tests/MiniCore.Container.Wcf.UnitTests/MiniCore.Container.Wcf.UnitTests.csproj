@@ -33,6 +33,7 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,13 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InstanceProviderBehaviourTests.cs" />
     <Compile Include="InstanceProviderTests.cs" />
+    <Compile Include="Mocks\MockServiceHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MiniCore.Container\MiniCore.Container.Wcf\MiniCore.Container.Wcf.csproj">
+      <Project>{626F0EBF-793B-45F1-9368-71CECBF70450}</Project>
+      <Name>MiniCore.Container.Wcf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\MiniCore.Container\MiniCore.Container\MiniCore.Container.csproj">
       <Project>{309599D8-4E10-4A6D-855D-A7FD842FCE39}</Project>
       <Name>MiniCore.Container</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiniCore.Container.Tests.Common\MiniCore.Container.Tests.Common.csproj">
+      <Project>{3615952D-7D46-4192-910E-091999DDC0CD}</Project>
+      <Name>MiniCore.Container.Tests.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

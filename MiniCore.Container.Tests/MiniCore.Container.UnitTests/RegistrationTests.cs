@@ -12,15 +12,15 @@ namespace MiniCore.Container.UnitTests
         [TestMethod]
         public void ShouldRegisterTypePair()
         {
-            container.Register(typeof(IMock), typeof(MockNoConstructor));
+            container.Register(typeof(IMock), typeof(MockPoco));
             var registered = container.Registry.First(f => f.From == typeof(IMock));
-            Assert.AreSame(typeof(MockNoConstructor), registered.To);
+            Assert.AreSame(typeof(MockPoco), registered.To);
         }
 
         [TestMethod]
         public void ShouldRegisterInstance()
         {
-            var instance = new MockNoConstructor();
+            var instance = new MockPoco();
             container.RegisterInstance(typeof(IMock), instance);
             var registered = container.Registry.First(f => f.From == typeof(IMock));
             Assert.AreSame(instance, registered.Instance);
@@ -29,9 +29,9 @@ namespace MiniCore.Container.UnitTests
         [TestMethod]
         public void ShouldMapFromTypeWhenToIsNull()
         {
-            container.Register(typeof(MockNoConstructor), null);
-            var registered = container.Registry.First(f => f.From == typeof(MockNoConstructor));
-            Assert.AreSame(typeof(MockNoConstructor), registered.To);
+            container.Register(typeof(MockPoco), null);
+            var registered = container.Registry.First(f => f.From == typeof(MockPoco));
+            Assert.AreSame(typeof(MockPoco), registered.To);
         }
 
         [TestMethod]
@@ -46,7 +46,7 @@ namespace MiniCore.Container.UnitTests
         [ExpectedException(typeof(ArgumentException))]
         public void ShouldThrowIfMultipleRegistrationsOfSameType()
         {
-            container.Register(typeof(IMock), typeof(MockNoConstructor));
+            container.Register(typeof(IMock), typeof(MockPoco));
             container.Register(typeof(IMock), typeof(MockPrivateConstructor));
         }
 

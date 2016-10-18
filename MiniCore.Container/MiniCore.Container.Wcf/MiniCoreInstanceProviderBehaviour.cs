@@ -13,11 +13,11 @@ namespace MiniCore.Container.Wcf
 {
     public class MiniCoreInstanceProviderBehaviour : IServiceBehavior
     {
-        private readonly IContainer _container;
+        private readonly IInstanceProvider _instanceProvider;
 
-        public MiniCoreInstanceProviderBehaviour(IContainer container)
+        public MiniCoreInstanceProviderBehaviour(IInstanceProvider instanceProvider)
         {
-            _container = container;
+            _instanceProvider = instanceProvider;
         }
 
         public void ApplyDispatchBehavior(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase)
@@ -27,8 +27,7 @@ namespace MiniCore.Container.Wcf
                 var channelDispatcher = channelDispatcherBase as ChannelDispatcher;
                 if (channelDispatcher != null)
                 {
-                    channelDispatcher.Endpoints.ToList().ForEach(
-                        f => f.DispatchRuntime.InstanceProvider = new MiniCoreInstanceProvider(_container));
+                    channelDispatcher.Endpoints.ToList().ForEach(f => f.DispatchRuntime.InstanceProvider = _instanceProvider);
                 }
             }
         }

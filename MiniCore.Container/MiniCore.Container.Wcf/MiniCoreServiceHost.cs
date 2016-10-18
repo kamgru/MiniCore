@@ -19,7 +19,7 @@ namespace MiniCore.Container.Wcf
 
         protected override void OnOpen(TimeSpan timeout)
         {
-            Description.Behaviors.Add(new MiniCoreInstanceProviderBehaviour(_container));
+            Description.Behaviors.Add(new MiniCoreInstanceProviderBehaviour(new MiniCoreInstanceProvider(_container)));
             base.OnOpen(timeout);
         }
     }

@@ -14,23 +14,23 @@ namespace MiniCore.Container.UnitTests
         [TestMethod]
         public void ShouldRegisterGeneric()
         {
-            container.Register<IMock, MockNoConstructor>();
+            container.Register<IMock, MockPoco>();
             var registered = container.Registry.First(f => f.From == typeof(IMock));
-            Assert.AreSame(typeof(MockNoConstructor), registered.To);
+            Assert.AreSame(typeof(MockPoco), registered.To);
         }
 
         [TestMethod]
         public void ShouldMapFromToGeneric()
         {
-            container.Register<MockNoConstructor>();
-            var registered = container.Registry.First(f => f.From == typeof(MockNoConstructor));
-            Assert.AreSame(typeof(MockNoConstructor), registered.To);
+            container.Register<MockPoco>();
+            var registered = container.Registry.First(f => f.From == typeof(MockPoco));
+            Assert.AreSame(typeof(MockPoco), registered.To);
         }
 
         [TestMethod]
         public void ShouldRegisterInstanceGeneric()
         {
-            var instance = new MockNoConstructor();
+            var instance = new MockPoco();
             container.Register<IMock>(instance);
             var registered = container.Registry.First(f => f.From == typeof(IMock));
             Assert.AreSame(instance, registered.Instance);
@@ -39,7 +39,7 @@ namespace MiniCore.Container.UnitTests
         [TestMethod]
         public void ShouldResolveGeneric()
         {
-            var instance = new MockNoConstructor();
+            var instance = new MockPoco();
             container.Register<IMock>(instance);
             var resolved = container.Resolve<IMock>();
 

@@ -18,8 +18,8 @@ namespace MiniCore.Container.UnitTests
         [TestMethod]
         public void ShouldResolveParameterlessConstructorObject()
         {
-            container.Register(typeof(IMock), typeof(MockNoConstructor));
-            Assert.IsInstanceOfType(container.Resolve(typeof(IMock)), typeof(MockNoConstructor));
+            container.Register(typeof(IMock), typeof(MockPoco));
+            Assert.IsInstanceOfType(container.Resolve(typeof(IMock)), typeof(MockPoco));
         }
 
         [TestMethod]
@@ -34,7 +34,7 @@ namespace MiniCore.Container.UnitTests
         [TestMethod]
         public void ShouldResolveObjectInstance()
         {
-            var instance = new MockNoConstructor();
+            var instance = new MockPoco();
             container.RegisterInstance(typeof(IMock), instance);
             Assert.IsNotNull(container.Resolve(typeof(IMock)));
         }
