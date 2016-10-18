@@ -4,10 +4,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MiniCore.Container;
 using MiniCore.Container.UnitTests.Mocks;
 
-namespace MiniCore.UnitTests
+namespace MiniCore.Container.UnitTests
 {
     [TestClass]
-    public class RegistrationTests
+    public class RegistrationTests : ContainerTestsBase
     {
         [TestMethod]
         public void ShouldRegisterTypePair()
@@ -57,12 +57,5 @@ namespace MiniCore.UnitTests
             container.Register(typeof(int), null);
         }
 
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            container = new MiniCoreContainer();
-        }
-
-        private IContainer container;
     }
 }

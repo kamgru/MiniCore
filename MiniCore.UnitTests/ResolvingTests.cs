@@ -3,10 +3,10 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MiniCore.Container;
 using MiniCore.Container.UnitTests.Mocks;
 
-namespace MiniCore.UnitTests
+namespace MiniCore.Container.UnitTests
 {
     [TestClass]
-    public class ResolvingTests
+    public class ResolvingTests : ContainerTestsBase
     {
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
@@ -38,13 +38,5 @@ namespace MiniCore.UnitTests
             container.RegisterInstance(typeof(IMock), instance);
             Assert.IsNotNull(container.Resolve(typeof(IMock)));
         }
-
-        [TestInitialize]
-        public void TestInitialize()
-        {
-            container = new MiniCoreContainer();
-        }
-
-        private IContainer container;
     }
 }

@@ -46,6 +46,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConstructorSelectorTests.cs" />
+    <Compile Include="ContainerTestsBase.cs" />
+    <Compile Include="ExtensionsTests.cs" />
     <Compile Include="Helpers\ObjectExtensions.cs" />
     <Compile Include="Mocks\IDependency.cs" />
     <Compile Include="Mocks\IMock.cs" />
